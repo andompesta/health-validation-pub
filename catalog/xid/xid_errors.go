@@ -33,8 +33,8 @@ var (
 	hopperArchitectures          = []string{"H100", "H200"}
 	// graceBlackwellArchitectures covers Xids NVIDIA's catalog marks
 	// GraceBlackwell and do not occur on an HGX B200 baseboard.
-	graceBlackwellArchitectures  = []string{"GB200", "GB300"}
-	hgxArchitectures             = []string{"B200", "H100", "H200", "A100"}
+	graceBlackwellArchitectures = []string{"GB200", "GB300"}
+	hgxArchitectures            = []string{"B200", "H100", "H200", "A100"}
 )
 
 // resetAndService is the remediation sequence for a Xid code
