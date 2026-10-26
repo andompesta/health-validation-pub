@@ -33,7 +33,8 @@ var (
 	hopperArchitectures          = []string{"H100", "H200"}
 	// graceBlackwellArchitectures covers Xids NVIDIA's catalog marks
 	// GraceBlackwell and do not occur on an HGX B200 baseboard.
-	graceBlackwellArchitectures = []string{"GB200", "GB300"}
+	graceBlackwellArchitectures  = []string{"GB200", "GB300"}
+	hgxArchitectures             = []string{"B200", "H100", "H200", "A100"}
 )
 
 // resetAndService is the remediation sequence for a Xid code
@@ -50,7 +51,7 @@ func resetAndService() health.RecommendedAction {
 var criticalXids = []criticalXid{
 	{code: 46, action: resetAndService(), architectures: allArchitectures, description: "GPU stopped processing"},
 	{code: 48, action: resetAndService(), architectures: allArchitectures, description: "double bit ECC error"},
-	{code: 54, action: health.Drain(health.RemediationActionServiceRequired), architectures: ampereHopperArchitectures, description: "auxiliary power is not connected to the GPU board"},
+	{code: 54, action: health.Drain(health.RemediationActionServiceRequired), architectures: hgxArchitectures, description: "auxiliary power is not connected to the GPU board"},
 	{code: 62, action: resetAndService(), architectures: allArchitectures, description: "internal micro-controller halt"},
 	{code: 64, action: resetAndService(), architectures: allArchitectures, description: "GPU memory remapping failure"},
 	{code: 79, action: resetAndService(), architectures: allArchitectures, description: "GPU has fallen off the bus"},

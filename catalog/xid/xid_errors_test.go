@@ -81,7 +81,7 @@ func TestXidErrors_ArchitectureCoverage(t *testing.T) {
 		architectures []string
 	}{
 		{name: "all generations", checkID: "gpu_xid_46", architectures: []string{"GB200", "GB300", "B200", "H100", "H200", "A100"}},
-		{name: "Ampere and Hopper", checkID: "gpu_xid_54", architectures: []string{"H100", "H200", "A100"}},
+		{name: "HGX and PCIe baseboards, not Grace", checkID: "gpu_xid_54", architectures: []string{"B200", "H100", "H200", "A100"}},
 		{name: "Hopper only", checkID: "gpu_xid_136", architectures: []string{"H100", "H200"}},
 		{name: "Hopper and Blackwell", checkID: "gpu_xid_110", architectures: []string{"GB200", "GB300", "B200", "H100", "H200"}},
 		{name: "Grace Blackwell only", checkID: "gpu_xid_142", architectures: []string{"GB200", "GB300"}},
